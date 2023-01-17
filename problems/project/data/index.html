@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lights controller</title>
+    <style type="text/css">
+      html{
+        font-family: verdana;
+      }
+      body{
+        background-color: #212529;
+      }
+      .cont {
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+      }
+      .grid-container {
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: 60% 20% 20%;
+        background-color: #dee2e6;
+        padding: 25px;
+      }
+      .grid-title {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        border-radius: 5px;
+        color: #ffffff;
+        background-color: #055160;
+        border: 0.5px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        margin: 2px;
+      }
+      .grid-item {
+        border-radius: 5px;
+        color: #ffffff;
+        background-color: #087990;
+        border: 0.5px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        margin: 2px;
+      }
+      .grid-item-status {
+        border-radius: 5px;
+        background-color: #ffffff;
+        border: 0.5px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        margin: 2px;
+      }
+      .grid-item-status.off {
+        border-radius: 5px;
+        background-color: #cfcfcf;
+        color: #ffffff;
+        border: 0.5px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        margin: 2px;
+      }
+      .grid-item-status.on {
+        border-radius: 5px;
+        background-color: #ffda6a;
+        border: 0.5px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        margin: 2px;
+      }
+      .button {
+        font-family: verdana;
+        background-color: #dfefef;
+        font-size: 20px;
+        border-radius: 5px;
+        border: 0.5px solid rgba(0, 0, 0, 0.8);
+        margin: 2px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+      #allonbutton {
+        background-color: #ffda6a;
+      }
+      #allonbutton:hover {
+        background-color: #ced4da;
+      }
+      #allonbutton:active {
+        background-color: #fff3cd;
+      }
+      #alloffbutton {
+        background-color: #cfcfcf;
+      }
+      #alloffbutton:hover {
+        background-color: #ced4da;
+      }
+      #alloffbutton:active {
+        background-color: #fff3cd;
+      }
+      .button:hover {
+        background-color: #ced4da;
+      }
+      .button:active {
+        background-color: #fff3cd;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      }
+
+      .grid-footer {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        border-radius: 5px;
+        border: 0.3px solid rgba(0, 0, 0, 0.8);
+        font-size: 30px;
+        text-align: center;
+        margin: 2px;
+        height: 80px;
+      }
+      .footer {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        border: 0;
+      }
+      
+
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="grid-container">
+
+        <div class="grid-title"><p>CS50 Ligth Controller</p></div>
+
+        <div class="grid-item"><p>Kitchen</p></div>
+        <button id="kitchenButt" class="button" onclick="lightStatus('/Kitchen', 'kitchenStatus')" type="button">Toggle</button>
+        <div id="kitchenStatus" class="grid-item-status"><p id="pkitchenStatus">--</p></div>
+
+        <div class="grid-item"><p>Dining Room</p></div>
+        <button id="diningButt" class="button" onclick="lightStatus('/Diningroom', 'diningStatus')" type="button">Toggle</button>
+        <div id="diningStatus" class="grid-item-status"><p id="pdiningStatus">--</p></div>
+
+        <div class="grid-item"><p>Living Room</p></div>
+        <button id="livingButt" class="button" onclick="lightStatus('/Livingroom', 'livingStatus')" type="button">Toggle</button>
+        <div id="livingStatus" class="grid-item-status"><p id="plivingStatus">--</p></div>
+
+        <div class="grid-item"><p>Master Bedroom</p></div>
+        <button id="masterButt" class="button" onclick="lightStatus('/Master', 'masterStatus')" type="button">Toggle</button>
+        <div id="masterStatus" class="grid-item-status"><p id="pmasterStatus">--</p></div>
+
+        
+        <div class="grid-footer"><button id="allonbutton" onclick="allon()" class="button footer" type="button">ALL ON</button></div>
+        <div class="grid-footer"><button id="alloffbutton" onclick="alloff()" class="button footer" type="button">ALL OFF</button></div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', checkStates, false);
+
+      function allon(){
+        var xhr = new XMLHttpRequest(); 
+        xhr.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 204) {
+          checkStates();
+        }};
+        xhr.open("GET", "/Allon", true); //Open the request
+        xhr.send(); //Sends the request
+      };
+
+      function alloff(){
+        var xhr = new XMLHttpRequest(); 
+        xhr.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 204) {
+          checkStates();
+        }};
+        xhr.open("GET", "/Alloff", true); //Open the request
+        xhr.send(); //Sends the request
+      };
+
+      function lightStatus(url, output){
+        var xhr = new XMLHttpRequest(); 
+        xhr.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200) {
+
+          let pstatus = "p" + output;
+          let container = document.getElementById(output);
+          let parag = document.getElementById(pstatus);
+    
+          if(this.responseText == "OFF"){
+            parag.innerHTML = "OFF";
+            container.classList.add("off");
+            container.classList.remove("on");
+          }
+          if(this.responseText == "ON"){
+            parag.innerHTML = "ON";
+            container.classList.add("on");
+            container.classList.remove("off");
+          }  
+          
+        }};
+        xhr.open("GET", url, true); //Open the request
+        xhr.send(); //Sends the request
+      };
+
+    
+      function checkStates(){
+        var xhr = new XMLHttpRequest(); 
+        xhr.onreadystatechange = function(){
+          if (this.readyState == 4 && this.status == 200) {
+            let zones = ["kitchenStatus", "diningStatus", "livingStatus", "masterStatus"];
+            let response = this.responseText;
+            let states = response.split('-');
+
+            zones.forEach(update);
+
+            function update(value, index, array) {
+              let pstatus = "p" + value;
+              let container = document.getElementById(value);
+              let parag = document.getElementById(pstatus);
+
+              if(states[index] == "OFF"){
+                parag.innerHTML = "OFF";
+                container.classList.add("off");
+                container.classList.remove("on");
+              }
+              if(states[index] == "ON"){
+                parag.innerHTML = "ON";
+                container.classList.add("on");
+                container.classList.remove("off");
+              } 
+            }
+          }
+        };
+
+        xhr.open("GET", "/getCurrentStatus", true); //Open the request
+        xhr.send(); //Sends the request
+      };
+
+    </script>
+    
+  </body>
+</html>

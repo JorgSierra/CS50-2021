@@ -1,0 +1,72 @@
+I think that for this lab the use of the different size arrays (5000, 10000, 50000)  will show the relation between each 
+sorting algorithm and n so I'm going to evaluate the biggest arrays where the differences might be bigger:
+
+sort1 uses: BUBBLE SORT
+How do you know?: 
+* Bubble has a wide range of running times: From ohmega(n) to O(n^2):
+  In the best case scenario where the array is allready sorted the best performing One was sort1
+  In both random and reversed arrays it performed really bad in comparison to sort2 and sort3 but this wider range makes me think bubble
+  is this first algorithm
+
+
+
+sort2 uses: MERGE SORT
+How do you know?:
+* Its execution time is "CONSTANT" no matter the order the array is sorted at the begginin
+* Sugest eather of these two:
+                        theta(n^2) - > Selection sort
+                        theta(n log n) -> Merge sort
+* As sort2 performed better than sort3 in both reversed and random arrays
+                        theta(n log n) -> Merge sort 
+                        
+                        
+
+sort3 uses: SELECTION SORT
+How do you know?:
+* Its execution time is "CONSTANT" no matter the order the array is sorted at the begginin
+* Sugest eather of these two:
+                        theta(n^2) - > Selection sort
+                        theta(n log n) -> Merge sort
+* As sort3 performed worse than sort2 in both reversed and random arrays
+                        theta(n log n) -> Merge sort 
+
+
+
+--------------------------------------------------------------------
+
+In the next few lines I'll share my procedure writing as I execute: 
+
+First let's try all bigger arrays:
+
+n = 50000
+-- BEST CASE
+                        ohmega(n^2) - > Selection sort
+                        ohmega(n log n) - > Merge sort
+                        ohmega(n) - > Bubble sort
+( Real [s] ) / ( User [s] ) / ( Sys time [s] )
+sort1 sorted: 2.667 / 0.023 / 0.088 - bubble ??
+sort2 sorted: 2.917 / 0.029 / 0.089 - merge ??
+sort3 sorted: 7.380 / 2.421 / 0.080 - theta(n^2) ??
+
+-- Would say equaly random arrays:
+sort1 reversed: 12.059 / 4.618 / 0.076
+sort2 reversed: 4.869 / 0.037 / 0.074
+sort3 reversed: 8.021 / 2.442 / 0.060
+
+sort1 random: 15.623 / 6.370 / 0.072
+sort2 random: 3.426 / 0. 055 / 0.060
+sort3 random: 8.768 / 2.465 / 0.080
+
+
+* sort3 is constant like independent of the orther the array is "constant" number of steps
+* sort2 is constant like independent of the orther the array is "constant" number of steps
+* sort1 do ok in sorted order but reversed and random are very high
+* in reversed and random sort2 is the best performing one
+* when the array is sorted sort1 is the best performing one -> 
+
+                        O(n^2) - > Selection sort, bubble sort
+                        O(n log n) - > Merge sort
+                        
+                        theta(n^2) - > Selection sort
+                        theta(n log n) -> Merge sort
+

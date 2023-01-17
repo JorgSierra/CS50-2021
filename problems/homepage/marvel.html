@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>MCU</title>
+    </head>
+    <body>
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">
+                <img id="JorgeLogo" src="JorgeLogo.jpeg" class="img-fluid" alt="Responsive image">
+            </a>
+            <!-- Button used when the screen's width is small -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="embedded.html">Embedded</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="escalada.html">Climbing</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="marvel.html">Marvel <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0" action="https://www.google.com/search" method="get">
+                <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search on google" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <h1 class="display-4">Marvel Cinematic Universe (MCU)</h1>
+            <p class="lead">I get a great for interest how the story of the MCU is ordered chronologically. So here is a list of how I think you should see these movies and TV shows:</p>
+            <hr class="my-4">
+
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Movie or TV Show</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Platform</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Captain America: The First Avenger</td>
+                    <td>2011</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Agent Carter</td>
+                    <td>2015</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Captain Marvel</td>
+                    <td>2019</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Iron Man</td>
+                    <td>2008</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>The Incredible Hulk</td>
+                    <td>2008</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Iron Man 2</td>
+                    <td>2010</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Thor</td>
+                    <td>2011</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>The Avengers</td>
+                    <td>2012</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>Iron Man 3</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 1, Ep. 1-7)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>Thor: The Dark World</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 1, Ep. 8-16)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">13</th>
+                    <td>Captain America: The Winter Soldier</td>
+                    <td>2014</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">14</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 1, Ep. 17-22)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">15</th>
+                    <td>Guardians of the Galaxy</td>
+                    <td>2014</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">16</th>
+                    <td>Guardians of the Galaxy Vol. 2</td>
+                    <td>2017</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">17</th>
+                    <td>Daredevil (Season 1)</td>
+                    <td>2015</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">18</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 2, Ep. 1-10)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">19</th>
+                    <td>Marvel's Jessica Jones (Season 1)</td>
+                    <td>2015</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">20</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 2, Ep. 11-19)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">21</th>
+                    <td>Avengers: Age of Ultron</td>
+                    <td>2015</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">22</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 2, Ep. 20-22)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">23</th>
+                    <td>Daredevil (Season 2, Ep. 1-4)</td>
+                    <td>2015</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">24</th>
+                    <td>Marvel's Luke Cage (Season 1, Ep. 1-4)</td>
+                    <td>2016</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">25</th>
+                    <td>Daredevil (Season 2, Ep. 5-11)</td>
+                    <td>2015</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">26</th>
+                    <td>Marvel's Luke Cage (Season 1, Ep. 5-8)</td>
+                    <td>2016</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">27</th>
+                    <td>Daredevil (Season 2, Ep. 12-13)</td>
+                    <td>2015</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">28</th>
+                    <td>Ant-Man</td>
+                    <td>2015</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">29</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 3, Ep. 1-19)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">30</th>
+                    <td>Iron Fist (Season 1)</td>
+                    <td>2017</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">31</th>
+                    <td>Captain America: Civil War</td>
+                    <td>2016</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">32</th>
+                    <td>Black Widowr</td>
+                    <td>2021</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">33</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 3, Ep. 20-22)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">34</th>
+                    <td>The Defenders (Season 1)</td>
+                    <td>2017</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">35</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 4, Ep. 1-6)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">36</th>
+                    <td>Doctor Strange</td>
+                    <td>2016</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">37</th>
+                    <td>Black Panther</td>
+                    <td>2018</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">38</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 4, Ep. 7-22)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">39</th>
+                    <td>Spider-Man: Homecoming</td>
+                    <td>2017</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">40</th>
+                    <td>Thor: Ragnarok</td>
+                    <td>2017</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">41</th>
+                    <td>Inhumans (Season 1)</td>
+                    <td>2017</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">42</th>
+                    <td>The Punisher (Season 1)</td>
+                    <td>2017</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">43</th>
+                    <td>Runaways (Season 1)</td>
+                    <td>2017</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">44</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 5, Ep. 1-10)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">45</th>
+                    <td>Marvel's Jessica Jones (Season 2)</td>
+                    <td>2015</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">46</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 5, Ep. 11-18)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">47</th>
+                    <td>Cloak & Dagger (Season 1-2)</td>
+                    <td>2018</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">48</th>
+                    <td>Marvel's Luke Cage (Season 2)</td>
+                    <td>2016</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">49</th>
+                    <td>Iron Fist (Season 2)</td>
+                    <td>2017</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">50</th>
+                    <td>Daredevil (Season 3)</td>
+                    <td>2015</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">51</th>
+                    <td>Runaways (Season 2)</td>
+                    <td>2017</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">52</th>
+                    <td>The Punisher (Season 2)</td>
+                    <td>2017</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">53</th>
+                    <td>Marvel's Jessica Jones (Season 3)</td>
+                    <td>2015</td>
+                    <td>Netflix</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">54</th>
+                    <td>Ant-Man & Wasp</td>
+                    <td>2018</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">55</th>
+                    <td>Avengers: Infinity War</td>
+                    <td>2018</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">56</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 5, Ep. 19-22)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">57</th>
+                    <td>Agents of S.H.I.E.L.D. (Season 6-7)</td>
+                    <td>2013</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">58</th>
+                    <td>Runaways (Season 3)</td>
+                    <td>2017</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">59</th>
+                    <td>Avengers: Endgame</td>
+                    <td>2019</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">60</th>
+                    <td>Loki (Season 1)</td>
+                    <td>2021</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">61</th>
+                    <td>What If...? (Season 1)</td>
+                    <td>2021</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">62</th>
+                    <td>WandaVision (Season 1)</td>
+                    <td>2021</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">63</th>
+                    <td>The Falcon and the Winter Soldier (Season 1)</td>
+                    <td>2021</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">64</th>
+                    <td>Shang-Chi and The Legend of The Ten Rings</td>
+                    <td>2021</td>
+                    <td>Disney+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">65</th>
+                    <td>Eternals</td>
+                    <td>2021</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">66</th>
+                    <td>Spider-Man: Far from Home</td>
+                    <td>2019</td>
+                    <td>Prime Video</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">67</th>
+                    <td>Spider-Man: No Way Home</td>
+                    <td>2021</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">68</th>
+                    <td>Hawkeye</td>
+                    <td>2021</td>
+                    <td>Disney+</td>
+                  </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

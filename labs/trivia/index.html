@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            function listen() {
+                document.querySelector("#Broccoli").onclick = function() {
+                    let txt = document.querySelector("#firstQcorrect");
+                    txt.classList.add("hidden");
+                    txt = document.querySelector("#firstQincorrect");
+                    txt.classList.remove("hidden");
+                    let butt = document.querySelector("#Broccoli");
+                    butt.classList.add("incorrect");
+                    butt = document.querySelector("#Spinach");
+                    butt.className = '';
+                    butt = document.querySelector("#Asparagus");
+                    butt.className = '';
+                    butt = document.querySelector("#Lentils");
+                    butt.className = '';
+                };
+                document.querySelector('#Spinach').onclick = function() {
+                    let txt = document.querySelector("#firstQcorrect");
+                    txt.classList.remove("hidden");
+                    txt = document.querySelector("#firstQincorrect");
+                    txt.classList.add("hidden");
+                    let butt = document.querySelector("#Broccoli");
+                    butt.className = '';
+                    butt = document.querySelector("#Spinach");
+                    butt.classList.add("correct");
+                    butt = document.querySelector("#Asparagus");
+                    butt.className = '';
+                    butt = document.querySelector("#Lentils");
+                    butt.className = '';
+                };
+                document.querySelector('#Asparagus').onclick = function() {
+                    let txt = document.querySelector("#firstQcorrect");
+                    txt.classList.add("hidden");
+                    txt = document.querySelector("#firstQincorrect");
+                    txt.classList.remove("hidden");
+                    let butt = document.querySelector("#Broccoli");
+                    butt.className = '';
+                    butt = document.querySelector("#Spinach");
+                    butt.className = '';
+                    butt = document.querySelector("#Asparagus");
+                    butt.classList.add("incorrect");
+                    butt = document.querySelector("#Lentils");
+                    butt.className = '';
+                };
+                document.querySelector('#Lentils').onclick = function() {
+                    let txt = document.querySelector("#firstQcorrect");
+                    txt.classList.add("hidden");
+                    txt = document.querySelector("#firstQincorrect");
+                    txt.classList.remove("hidden");
+                    let butt = document.querySelector("#Broccoli");
+                    butt.className = '';
+                    butt = document.querySelector("#Spinach");
+                    butt.className = '';
+                    butt = document.querySelector("#Asparagus");
+                    butt.className = '';
+                    butt = document.querySelector("#Lentils");
+                    butt.classList.add("incorrect");
+                };
+                document.querySelector('#secondQ').onclick = function() {
+                    let response = document.querySelector("#openResp").value;
+                    let field = document.querySelector("#openResp");
+                    if (response == "William Shakespeare"){
+                        let txt = document.querySelector("#secondQcorrect");
+                        txt.classList.remove("hidden");
+                        txt = document.querySelector("#secondQincorrect");
+                        txt.classList.add("hidden");
+                        field.classList.add("correct");
+                    }
+                    else{
+                        let txt = document.querySelector("#secondQincorrect");
+                        txt.classList.remove("hidden");
+                        txt = document.querySelector("#secondQcorrect");
+                        txt.classList.add("hidden");
+                        field.classList.add("incorrect");
+                    }
+
+                };
+            }
+
+            document.addEventListener('DOMContentLoaded', listen);
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+
+                <h3>Which vegetable gives Popeye his strength?</h3>
+                <h4 id="firstQcorrect" class="hidden">Correct!</h4>
+                <h4 id="firstQincorrect" class="hidden">Incorrect!</h4>
+                <button id='Broccoli'>Broccoli</button>
+                <button id='Spinach'>Spinach</button>
+                <button id='Asparagus'>Asparagus</button>
+                <button id='Lentils'>Lentils</button>
+
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>Who Invented The Word Vomit?</h3>
+                <h4 id="secondQcorrect" class="hidden">Correct!</h4>
+                <h4 id="secondQincorrect" class="hidden">Incorrect!</h4>
+                <input autocomplete="off" id="openResp" type="text">
+                <button id='secondQ'>Check answer</button>
+
+            </div>
+
+        </div>
+    </body>
+</html>
